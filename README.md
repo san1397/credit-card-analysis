@@ -1,44 +1,23 @@
-# stockpriceanalysis
-Stock Price Data Analysis - PySpark Project
+# Stock Price Movement Analysis
+Stock Price Movement Analysis
 
 Project Overview
-This project demonstrates a simple stock price data analysis using PySpark. The goal was to analyze historical stock price data and extract key metrics such as average stock prices, daily percentage change, and the highest/lowest stock prices. The project showcases the use of PySpark to process and analyze large financial datasets efficiently.
+The Stock Price Movement Analysis project focuses on analyzing the historical stock price data of a specific company (e.g., Tesla, Apple, or any stock of choice) to understand the trends, volatility, and performance over a given time period. The primary goal of this project is to derive actionable insights from the data, visualize the stock's price movements, and highlight key trends and patterns using Python and Power BI.
 
-Tools Used
-1. **PySpark**: For processing and analyzing large-scale datasets.
-2. **Python**: Programming language used to implement the analysis logic.
-3. **CSV**: Dataset format used for storing and loading stock price data.
-4. **Databricks**: provided a managed Apache Spark environment for scalable and efficient data analysis.
-5. **Apache Spark**: Distributed computing framework used for handling large data efficiently.
+Skills Used:
+Python:
+ - Pandas: Data cleaning, preprocessing, and analysis.
 
-Data
-The dataset used for this project contains historical stock price information, including columns like:
-- **date**: Date of the stock price data.
-- **stock_symbol**: Unique identifier for each stock.
-- **open**: Opening price for the stock on a given day.
-- **high**: Highest price for the stock during the day.
-- **low**: Lowest price for the stock during the day.
-- **close**: Closing price for the stock on the given day.
-- **volume**: Volume of stock traded.
+Power BI:
+ - Data visualization and dashboard creation (line charts, candlestick charts, bar charts).
+ - Integration of Python-processed data into Power BI for visualization.
 
-Methodology
-The project followed these steps for data processing and analysis:
-1. **Data Loading**: Loaded the stock price data into a PySpark DataFrame from CSV files.
-2. **Data Cleaning**: Handled missing values using `dropna()` and removed duplicate rows with `dropDuplicates()`.
-3. **Data Transformation**: Applied transformations such as calculating daily percentage change and calculating average prices.
-4. **Aggregation**: Used `groupBy()` and `agg()` to calculate metrics like average price, highest price, and lowest price per stock.
-5. **SQL Operations**: Registered the DataFrame as a temporary SQL table and used SQL queries to analyze the data.
-6. **File Writing**: Exported the cleaned and transformed data to CSV files for further analysis.
+Data Analysis:
+ - Data preprocessing and handling missing values.
+ - Calculating stock performance metrics (daily returns, moving averages).
+ - Time-series analysis to identify trends and fluctuations.
 
-Key PySpark Functions
-1. **groupBy()**: Used to group the data by stock symbol for aggregation.
-2. **agg()**: Applied aggregation functions like average, max, and min.
-3. **withColumn()**: Used to add new columns, such as calculating the daily percentage change.
-4. **filter()**: Filtered data based on conditions like price thresholds.
-5. **select()**: Selected specific columns from the DataFrame.
-6. **createOrReplaceTempView()**: Registered the DataFrame as a temporary SQL table to run SQL queries.
-7. **write.csv()**: Saved the final output to a CSV file.
+Outcome and Benefits:
+The Stock Price Movement Analysis project provided valuable insights into the performance of the stock during the chosen time period. By analyzing historical price data and calculating key metrics such as daily returns, moving averages, and volatility, this project helps investors understand market conditions, price trends, and potential risk.
 
-
-Conclusion
-This project provided a practical introduction to PySpark, showcasing how to handle large financial datasets, perform basic stock price analysis, and export the results for further reporting. The use of PySpark's distributed processing power allowed for efficient data manipulation, even with large datasets. This project can be extended by incorporating more advanced techniques like time-series analysis or machine learning for stock price prediction.
+The visualization in Power BI allowed the creation of interactive dashboards that could be used for decision-making and risk management.
