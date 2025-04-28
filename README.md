@@ -5,11 +5,11 @@ Project Overview
 This project demonstrates a simple stock price data analysis using PySpark. The goal was to analyze historical stock price data and extract key metrics such as average stock prices, daily percentage change, and the highest/lowest stock prices. The project showcases the use of PySpark to process and analyze large financial datasets efficiently.
 
 Tools Used
-1. PySpark: For processing and analyzing large-scale datasets.
-2. Python: Programming language used to implement the analysis logic.
-3. CSV: Dataset format used for storing and loading stock price data.
-4. Databricks: provided a managed Apache Spark environment for scalable and efficient data analysis.
-5. Apache Spark: Distributed computing framework used for handling large data efficiently.
+1. **PySpark**: For processing and analyzing large-scale datasets.
+2. **Python**: Programming language used to implement the analysis logic.
+3. **CSV**: Dataset format used for storing and loading stock price data.
+4. **Databricks**: provided a managed Apache Spark environment for scalable and efficient data analysis.
+5. **Apache Spark**: Distributed computing framework used for handling large data efficiently.
 
 Data
 The dataset used for this project contains historical stock price information, including columns like:
