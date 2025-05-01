@@ -1,23 +1,47 @@
-# Stock Price Movement Analysis
-Stock Price Movement Analysis
+# Stock Price Analysis
+Stock Price Analysis
 
-Project Overview
-The Stock Price Movement Analysis project focuses on analyzing the historical stock price data of a specific company (e.g., Tesla, Apple, or any stock of choice) to understand the trends, volatility, and performance over a given time period. The primary goal of this project is to derive actionable insights from the data, visualize the stock's price movements, and highlight key trends and patterns using Python and Power BI.
 
-Skills Used:
-Python:
- - Pandas: Data cleaning, preprocessing, and analysis.
+**Tech Stack:**
+- **Data Storage** - AWS S3
+- **ETL & Transformation** - AWS Glue
+- **Querying** - AWS Athena
+- **Data Cataloging** - AWS Glue Crawler
+- **Monitoring** - AWS CloudWatch
+- **Access & Permissions** - AWS IAM
+- **Data Warehouse** - Snowflake
+- **Visualization** - Power BI
 
-Power BI:
- - Data visualization and dashboard creation (line charts, candlestick charts, bar charts).
- - Integration of Python-processed data into Power BI for visualization.
+**Data Ingestion**
+- I received millions of records of stock price data in CSV format.
+- Columns - date, stock_symbol, open, high, low, close, volume
+- Uploaded the raw files to an S3 bucket
 
-Data Analysis:
- - Data preprocessing and handling missing values.
- - Calculating stock performance metrics (daily returns, moving averages).
- - Time-series analysis to identify trends and fluctuations.
+**Data Cataloging with Glue Crawler**
+- Created Glue Crawler to scan the CSV files and automatically create a table in the AWS Glue Data Catalog.
+- Now I can query the raw data using Athena without manual schema definition.
 
-Outcome and Benefits:
-The Stock Price Movement Analysis project provided valuable insights into the performance of the stock during the chosen time period. By analyzing historical price data and calculating key metrics such as daily returns, moving averages, and volatility, this project helps investors understand market conditions, price trends, and potential risk.
+  **Data Transformation using AWS Glue**
+- Create an AWS Glue Job to transform the raw stock data.
+- Key transformations:
+     - Drop duplicates and nulls
+     - Convert data column to proper format
+     - Create new columns
+     - After transformation, I saved the cleaned data in Parquet format in S3.
 
-The visualization in Power BI allowed the creation of interactive dashboards that could be used for decision-making and risk management.
+ **Data Load to Snowflake**
+ - I used a connector to load the cleaned data from S3 to Snowflake.
+ - In Snowflake, I created a table for analysis
+
+**Querying with AWS Athena**
+- Before loading into Snowflake, I ran SQL queries using Athena to validate the transformation
+
+**Access Management with AWS IAM**
+- Created IAM roles for:
+   * Glue job execution
+   * Athena query access
+   * Snowflake data loading
+
+**Monitoring with CloudWatch**
+- Enavled CloudWatch Logs for Glue job runs
+- Created alerts for Glue Job failures using CloudWatch Alarms
